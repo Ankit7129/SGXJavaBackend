@@ -43,19 +43,19 @@ Right-click Main.java > Run As > Java Application.
 Console output will confirm vector generation and upload:
 ```
 
-#📦 Generating vectors and sending to Azure VM...
-
+## 📦 Generating vectors and sending to Azure VM...
+```
 ✅ Vector files uploaded to VM:
    • /home/ankit/data/vector1.txt
    • /home/ankit/data/vector2.txt
-   
-##🧠 What Happens Next in Azure VM?
+   ```
+# 🧠 What Happens Next in Azure VM?
+
 Once the vectors are saved to disk on the VM:
 
 A C++ SGX application reads /home/ankit/data/vector1.txt and vector2.txt.
 
 The application loads the vectors into memory.
-
 It passes them securely to an SGX enclave.
 
 Inside the enclave, secure vector addition is performed.
@@ -69,7 +69,7 @@ cd ~/linux-sgx/SampleCode/SampleEnclave
 make
 ./app
 ```
-#⚠️ Known Issue
+## ⚠️ Known Issue
 
 Only the first ~25 elements of the vector are correctly added.
 
@@ -83,7 +83,7 @@ Result[26] = -150858992
 Result[99] = 0
 ```
 
-#🛠 Work In Progress
+## 🛠 Work In Progress
 
 Likely due to:
 
@@ -95,7 +95,7 @@ Alignment or pointer errors in ecall_vector_add
 
 Debugging is ongoing.
 
-#🔗 SGX Enclave Code Reference
+# 🔗 SGX Enclave Code Reference
 ```
 The secure enclave application that performs vector addition is part of another repo:
 
@@ -110,13 +110,13 @@ Enclave.cpp	Trusted code that performs vector addition securely
 Enclave.edl	Interface definition for ECALL and OCALL functions
 App.cpp	Host application that reads vectors, invokes enclave, prints results
 ```
-#🖼 Screenshot
+## 🖼 Screenshot
 
-📷 (Attach a screenshot like below in your repo under screenshots/ folder)
+📷 (Attach a screenshot in screenshots folder)
 
 
 
-#🧪 Sample Output (Truncated)
+## 🧪 Sample Output (Truncated)
 
 ```ankit@sgx-7:/home/ankit71297129/linux-sgx/SampleCode/SampleEnclave$ make
 make[1]: Entering directory '/home/ankit71297129/linux-sgx/SampleCode/SampleEnclave'
