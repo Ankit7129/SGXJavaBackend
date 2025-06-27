@@ -96,20 +96,25 @@ Alignment or pointer errors in ecall_vector_add
 Debugging is ongoing.
 
 # 🔗 SGX Enclave Code Reference
-```
-The secure enclave application that performs vector addition is part of another repo:
 
-🔗 GitHub Repo: https://github.com/Ankit7129/linux-sgx
+🔗 SGX Enclave Code Reference
+The secure enclave application that performs vector addition is part of another repository:
 
-📁 Relevant Path: SampleCode/SampleEnclave
+🔗 GitHub Repo: Ankit7129/linux-sgx [(https://github.com/Ankit7129)]
 
-Key SGX Files & Roles
+📁 Relevant Path: SampleCode/SampleEnclave [([https://github.com/Ankit7129/linux-sgx/SampleCode/SampleEnclave](https://github.com/Ankit7129/linux-sgx/tree/main/SampleCode/SampleEnclave))]
+
+# Key SGX Files & Roles
 
 File	Description
-Enclave.cpp	Trusted code that performs vector addition securely
-Enclave.edl	Interface definition for ECALL and OCALL functions
-App.cpp	Host application that reads vectors, invokes enclave, prints results
-```
+## Enclave.cpp	
+Trusted code that performs vector addition securely [([https://github.com/Ankit7129/linux-sgx/SampleCode/SampleEnclave/Enclave/Enclave.cpp](https://github.com/Ankit7129/linux-sgx/tree/main/SampleCode/SampleEnclave/Enclave/Enclave.cpp))]
+
+## Enclave.edl
+Interface definition for ECALL and OCALL functions [([https://github.com/Ankit7129/linux-sgx/SampleCode/SampleEnclave](https://github.com/Ankit7129/linux-sgx/tree/main/SampleCode/SampleEnclave/Enclave/Enclave.edl))]
+## App.cpp
+Host application that reads vectors, invokes enclave, prints results [([https://github.com/Ankit7129/linux-sgx/SampleCode/SampleEnclave](https://github.com/Ankit7129/linux-sgx/tree/main/SampleCode/SampleEnclave/App/App.cpp))]
+
 ## 🖼 Screenshot
 ![SGX Vector Addition Result](src/sgx-result.png.png)
 
