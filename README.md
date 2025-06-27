@@ -111,9 +111,10 @@ Enclave.edl	Interface definition for ECALL and OCALL functions
 App.cpp	Host application that reads vectors, invokes enclave, prints results
 ```
 ## 🖼 Screenshot
+![SGX Vector Addition Result](src/sgx-result.png)
 
 📷 (Attach a screenshot in screenshots folder)
-
+src/Screenshot 2025-06-27 035412.png
 
 
 ## 🧪 Sample Output (Truncated)
