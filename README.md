@@ -111,11 +111,46 @@ Enclave.edl	Interface definition for ECALL and OCALL functions
 App.cpp	Host application that reads vectors, invokes enclave, prints results
 ```
 ## 🖼 Screenshot
-![SGX Vector Addition Result](src/sgx-result.png)
+![SGX Vector Addition Result](src/sgx-result.png.png)
 
-📷 (Attach a screenshot in screenshots folder)
-src/Screenshot 2025-06-27 035412.png
+This screenshot captures the end-to-end result of the secure vector addition workflow using Intel SGX and an Azure virtual machine backend:
 
+📄 Upper Pane (VS Code Editor)
+Shows two text files:
+
+vector1.txt
+
+vector2.txt
+
+Each file contains 100 space-separated integers generated randomly using a Java backend.
+
+These files are created locally on the Azure VM disk at /home/ankit/data/ and are read by the SGX host application during execution.
+
+🖥️ Bottom Pane (Terminal Output)
+Displays the terminal output after running ./app inside the SGX C++ sample application:
+
+bash
+Copy code
+cd ~/linux-sgx/SampleCode/SampleEnclave
+make
+./app
+The output shows:
+
+A status message: ✅ Vector addition completed inside SGX enclave
+
+A loop that prints the result of vector addition from index 0 to 99.
+
+Values from Result[0] to Result[24] are correct and consistent with the inputs.
+
+From Result[25] onwards, some values are:
+
+Extremely large
+
+Negative
+
+Zeroes
+
+This indicates a partial success: vector addition works only for the first ~25 elements due to a likely memory misalignment or buffer overflow issue in the enclave code.
 
 ## 🧪 Sample Output (Truncated)
 
